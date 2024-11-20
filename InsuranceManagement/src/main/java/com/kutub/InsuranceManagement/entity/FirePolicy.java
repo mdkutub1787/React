@@ -18,7 +18,4 @@ public class FirePolicy {
     private String address;
 
 
-
-
-
 }
