@@ -1,0 +1,25 @@
+/* Updated Header.css */
+.custom-navbar {
+  background-color: #007bff;  /* Custom blue color */
+}
+
+.custom-navbar .navbar-brand {
+  font-size: 1.5rem;
+  color: white !important;  /* Make the brand text white */
+}
+
+.custom-navbar .nav-link {
+  color: white !important;  /* Make the nav links white */
+}
+
+.custom-navbar .nav-link:hover {
+  color: #ddd !important;  /* Change hover color */
+}
+
+.custom-navbar .dropdown-item {
+  color: #000 !important;  /* Custom color for dropdown items */
+}
+
+.custom-navbar .dropdown-item:hover {
+  background-color: #f1f1f1;  /* Change background color on hover */
+}
