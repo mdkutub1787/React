@@ -40,6 +40,7 @@ const FirePolicyComponent = () => {
         <table className="policy-table">
           <thead>
             <tr>
+              <th>ID</th>
               <th>Bank Name</th>
               <th>Policyholder</th>
               <th>Address</th>
@@ -48,6 +49,7 @@ const FirePolicyComponent = () => {
           <tbody>
             {firePolicies.map((policy) => (
               <tr key={policy.id}>
+                <td>{policy.id}</td>
                 <td>{policy.bankName}</td>
                 <td>{policy.policyholder}</td>
                 <td>{policy.address}</td>
