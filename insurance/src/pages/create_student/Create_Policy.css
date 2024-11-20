@@ -1,6 +1,6 @@
 /* Basic styling for the form */
 .policy-form-container {
-    width: 50%;
+    width: 60%; /* Increase form width */
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ddd;
@@ -23,19 +23,26 @@
   }
   
   .policy-form-container input {
-    padding: 8px;
+    padding: 12px; /* Increase padding for larger input fields */
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 25px; /* Make the input fields round */
+    width: 100%; /* Make the input fields take full width of the form */
+    box-sizing: border-box; /* Ensure padding is included in the width */
   }
   
   .policy-form-container button {
-    padding: 10px;
+    padding: 12px; /* Increase padding for larger button */
     border: none;
     background-color: #4CAF50;
     color: white;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 25px; /* Make the button round */
+    width: 20%; /* Set a smaller width */
+    margin: 0 auto; /* Center the button */
+    display: block; /* Ensure the button behaves as a block-level element */
+    box-sizing: border-box; /* Ensure padding is included in the width */
   }
+  
   
   .policy-form-container button:hover {
     background-color: #45a049;
