@@ -1,55 +1,59 @@
-/* Styling for the table container */
+/* Styling for the container */
 .policy-container {
   padding: 20px;
-  font-family: Arial, sans-serif;
 }
 
-/* Styling for the table */
+/* Table Styling */
 .policy-table {
   width: 100%;
-  border-collapse: collapse; /* Ensures borders between cells don't overlap */
-  margin-top: 20px;
-  border: 2px solid #ddd; /* Border around the entire table */
+  border-collapse: collapse;
 }
 
-/* Styling for table headers */
+.policy-table th, .policy-table td {
+  border: 1px solid #63b2e7;
+  padding: 8px;
+  text-align: left;
+}
+
 .policy-table th {
-  background-color: #007bff;
-  color: white;
-  padding: 10px;
-  text-align: left;
-  font-size: 1.2rem;
-  border: 1px solid #ddd; /* Border around header cells */
+  background-color: #a1cded;
 }
 
-/* Styling for table data cells */
-.policy-table td {
-  padding: 10px;
-  border: 1px solid #ddd; /* Border around data cells */
-  font-size: 1rem;
-  text-align: left;
-}
-
-/* Styling for the no policies message */
-.no-policies {
-  font-size: 1.2rem;
+/* Loading and error messages */
+.loading, .error, .no-policies {
   text-align: center;
-  color: #888;
+  font-size: 18px;
   margin-top: 20px;
 }
 
-/* Styling for loading message */
 .loading {
-  color: #007bff;
-  font-size: 1.5rem;
-  text-align: center;
-  margin-top: 20px;
+  color: blue;
 }
 
-/* Styling for error message */
 .error {
   color: red;
-  font-size: 1.5rem;
+}
+
+.no-policies {
+  color: gray;
+}
+
+/* Centered title */
+.text-center {
   text-align: center;
+}
+
+/* Retry Button Styling */
+button {
   margin-top: 20px;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
 }

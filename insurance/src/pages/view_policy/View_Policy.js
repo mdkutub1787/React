@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './View_Policy.css'; // Import the CSS file
+import './View_Policy.css'; // Make sure to define necessary CSS
 
 const FirePolicyComponent = () => {
   const [firePolicies, setFirePolicies] = useState([]);
@@ -29,7 +29,12 @@ const FirePolicyComponent = () => {
   }
 
   if (error) {
-    return <p className="error">Error: {error}</p>; // Show error message with styling
+    return (
+      <div>
+        <p className="error">Error: {error}</p> 
+        <button onClick={() => window.location.reload()}>Retry</button> {/* Retry button */}
+      </div>
+    );
   }
 
   return (
@@ -37,26 +42,29 @@ const FirePolicyComponent = () => {
       {firePolicies.length === 0 ? (
         <p className="no-policies">No policies found.</p> // Styled message for no policies
       ) : (
-        <table className="policy-table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Bank Name</th>
-              <th>Policyholder</th>
-              <th>Address</th>
-            </tr>
-          </thead>
-          <tbody>
-            {firePolicies.map((policy) => (
-              <tr key={policy.id}>
-                <td>{policy.id}</td>
-                <td>{policy.bankName}</td>
-                <td>{policy.policyholder}</td>
-                <td>{policy.address}</td>
+        <>
+          <h3 className="text-center">Fire Policy List</h3>
+          <table className="policy-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Bank Name</th>
+                <th>Policyholder</th>
+                <th>Address</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {firePolicies.map((policy) => (
+                <tr key={policy.id}>
+                  <td>{policy.id}</td>
+                  <td>{policy.bankName}</td>
+                  <td>{policy.policyholder}</td>
+                  <td>{policy.address}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </>
       )}
     </div>
   );
