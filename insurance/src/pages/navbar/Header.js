@@ -7,7 +7,7 @@ import './Header.css';  // Import the CSS file
 
 function Header() {
   return (
-    <Navbar expand="lg" className="custom-navbar">
+    <Navbar expand="lg" className="custom-navbar fixed-top"> {/* Added 'fixed-top' class */}
       <Container>
         <Navbar.Brand href="#home">Navbar</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

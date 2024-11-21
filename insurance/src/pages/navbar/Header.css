@@ -23,3 +23,14 @@
 .custom-navbar .dropdown-item:hover {
   background-color: #f1f1f1;  /* Change background color on hover */
 }
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030; /* Ensures it stays on top of other elements */
+}
+
+body {
+  padding-top: 70px; /* Adjust this value if the navbar height is different */
+}
