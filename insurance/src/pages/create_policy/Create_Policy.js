@@ -4,9 +4,11 @@ import './Create_Policy.css'; // Import the CSS file
 
 const FirePolicyCreate = () => {
   const [formData, setFormData] = useState({
+    date: '',
     bankName: '',
     policyholder: '',
     address: '',
+    sumInsurd: '', // Add sumInsurd to the formData state
   });
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
@@ -80,6 +82,16 @@ const FirePolicyCreate = () => {
       {success && <p className="success">Policy created successfully!</p>}
       <form onSubmit={handleSubmit}>
         <div>
+          <label>Date:</label>
+          <input
+            type="date"
+            name="date"
+            value={formData.date}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
           <label>Bank Name:</label>
           <input
             type="text"
@@ -105,6 +117,17 @@ const FirePolicyCreate = () => {
             type="text"
             name="address"
             value={formData.address}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div>
+          <label>Sum Insured:</label>
+          <input
+            type="number"
+            name="sumInsurd"
+            value={formData.sumInsurd}
             onChange={handleChange}
             required
           />

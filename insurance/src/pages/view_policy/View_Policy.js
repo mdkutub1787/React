@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import './View_Policy.css'; // Make sure to define necessary CSS
+import './View_Policy.css'; // Ensure necessary CSS is defined
 
 const FirePolicyComponent = () => {
   const [firePolicies, setFirePolicies] = useState([]);
-  const [loading, setLoading] = useState(true); // To handle loading state
-  const [error, setError] = useState(null); // To handle error state
+  const [loading, setLoading] = useState(true); // For loading state
+  const [error, setError] = useState(null); // For error handling
 
   useEffect(() => {
+    // Fetch fire policies data from API
     fetch('http://localhost:8080/api/firepolicy/')
       .then((response) => {
         if (!response.ok) {
@@ -24,23 +25,31 @@ const FirePolicyComponent = () => {
       });
   }, []);
 
+  // Loading state
   if (loading) {
-    return <p className="loading">Loading...</p>; // Show loading message with styling
+    return <p className="loading">Loading...</p>;
   }
 
+  // Error handling
   if (error) {
     return (
-      <div>
-        <p className="error">Error: {error}</p> 
-        <button onClick={() => window.location.reload()}>Retry</button> {/* Retry button */}
+      <div className="error-container">
+        <p className="error">Error: {error}</p>
+        <button
+          className="btn btn-primary"
+          onClick={() => window.location.reload()}
+        >
+          Retry
+        </button>
       </div>
     );
   }
 
+  // Render table if data is available
   return (
     <div className="policy-container">
       {firePolicies.length === 0 ? (
-        <p className="no-policies">No policies found.</p> // Styled message for no policies
+        <p className="no-policies">No policies found.</p>
       ) : (
         <>
           <h3 className="text-center">Fire Policy List</h3>
@@ -48,18 +57,23 @@ const FirePolicyComponent = () => {
             <thead>
               <tr>
                 <th>ID</th>
+                <th>Date</th>
                 <th>Bank Name</th>
                 <th>Policyholder</th>
                 <th>Address</th>
+                <th>Sum Insured</th>
+                {/* Add more columns if needed */}
               </tr>
             </thead>
             <tbody>
               {firePolicies.map((policy) => (
                 <tr key={policy.id}>
                   <td>{policy.id}</td>
+                  <td>{policy.date}</td>
                   <td>{policy.bankName}</td>
                   <td>{policy.policyholder}</td>
                   <td>{policy.address}</td>
+                  <td>{policy.sumInsurd}</td>
                 </tr>
               ))}
             </tbody>
