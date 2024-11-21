@@ -1,6 +1,6 @@
 /* Basic styling for the form */
 .policy-form-container {
-    width: 60%; /* Increase form width */
+    width: 40%; /* Increase form width */
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ddd;
@@ -37,7 +37,7 @@
     color: white;
     cursor: pointer;
     border-radius: 25px; /* Make the button round */
-    width: 20%; /* Set a smaller width */
+    width: 30%; /* Set a smaller width */
     margin: 0 auto; /* Center the button */
     display: block; /* Ensure the button behaves as a block-level element */
     box-sizing: border-box; /* Ensure padding is included in the width */

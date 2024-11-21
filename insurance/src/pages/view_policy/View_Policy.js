@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate instead of useHistory
 import './View_Policy.css'; // Ensure necessary CSS is defined
 
 const FirePolicyComponent = () => {
   const [firePolicies, setFirePolicies] = useState([]);
   const [loading, setLoading] = useState(true); // For loading state
   const [error, setError] = useState(null); // For error handling
+  const navigate = useNavigate(); // Initialize navigate hook
 
   useEffect(() => {
     // Fetch fire policies data from API
@@ -60,6 +62,14 @@ const FirePolicyComponent = () => {
         <p className="no-policies">No policies found.</p>
       ) : (
         <>
+        <div className="floating-add-button">
+            <button
+              className="btn btn-success"
+              onClick={() => navigate('/createpolicy')} // Use navigate for routing
+            >
+              Add Policy
+            </button>
+          </div>
           <h3 className="text-center">Fire Policy List</h3>
           <table className="policy-table">
             <thead>
@@ -86,6 +96,7 @@ const FirePolicyComponent = () => {
               ))}
             </tbody>
           </table>
+          
         </>
       )}
     </div>

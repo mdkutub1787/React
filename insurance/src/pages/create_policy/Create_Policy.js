@@ -3,13 +3,16 @@ import { useNavigate } from 'react-router-dom'; // Import useNavigate for naviga
 import './Create_Policy.css'; // Import the CSS file
 
 const FirePolicyCreate = () => {
+  const today = new Date().toISOString().split('T')[0]; // Get today's date in 'YYYY-MM-DD' format
+
   const [formData, setFormData] = useState({
-    date: '',
+    date: today, // Set the default value for 'date' to today's date
     bankName: '',
     policyholder: '',
     address: '',
     sumInsurd: '', // Add sumInsurd to the formData state
   });
+
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
   const [showDialog, setShowDialog] = useState(false); // State for controlling the dialog box
