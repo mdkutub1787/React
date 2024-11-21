@@ -16,7 +16,15 @@ const FirePolicyComponent = () => {
         return response.json();
       })
       .then((data) => {
-        setFirePolicies(data);
+        // Format the date for each policy
+        const formattedPolicies = data.map((policy) => {
+          return {
+            ...policy,
+            // Format date to show only the date (not time)
+            formattedDate: new Date(policy.date).toLocaleDateString('en-GB'), // Adjust to your preferred format
+          };
+        });
+        setFirePolicies(formattedPolicies);
         setLoading(false);
       })
       .catch((error) => {
@@ -69,7 +77,7 @@ const FirePolicyComponent = () => {
               {firePolicies.map((policy) => (
                 <tr key={policy.id}>
                   <td>{policy.id}</td>
-                  <td>{policy.date}</td>
+                  <td>{policy.formattedDate}</td> {/* Display formatted date */}
                   <td>{policy.bankName}</td>
                   <td>{policy.policyholder}</td>
                   <td>{policy.address}</td>

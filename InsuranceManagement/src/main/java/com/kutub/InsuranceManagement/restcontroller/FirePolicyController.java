@@ -1,10 +1,8 @@
 package com.kutub.InsuranceManagement.restcontroller;
 
-import com.kutub.InsuranceManagement.entity.FirePolicy;
+import com.kutub.InsuranceManagement.entity.Policy;
 import com.kutub.InsuranceManagement.service.FirePolicyService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,19 +17,19 @@ public class FirePolicyController {
 
     // Get all FirePolicies
     @GetMapping("/")
-    public List<FirePolicy> getAllFirePolicies() {
+    public List<Policy> getAllFirePolicies() {
         return firePolicyService.getAllFirePolicy();
     }
 
     // Create a new FirePolicy
     @PostMapping("/save")
-    public void saveFirePolicy(@RequestBody FirePolicy fp) {
+    public void saveFirePolicy(@RequestBody Policy fp) {
          firePolicyService.saveFirePolicy(fp);
     }
 
     // Update a FirePolicy by ID
     @PutMapping("/update/{id}")
-    public  void updateFirePolicy(@RequestBody FirePolicy fp){
+    public  void updateFirePolicy(@RequestBody Policy fp){
         firePolicyService.saveFirePolicy(fp);
     }
 
