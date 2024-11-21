@@ -1,7 +1,7 @@
 package com.kutub.InsuranceManagement.restcontroller;
 
 import com.kutub.InsuranceManagement.entity.Policy;
-import com.kutub.InsuranceManagement.service.FirePolicyService;
+import com.kutub.InsuranceManagement.service.PolicyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,10 +10,10 @@ import java.util.List;
 @RestController
 @RequestMapping("api/firepolicy")
 @CrossOrigin("*")
-public class FirePolicyController {
+public class PolicyController {
 
     @Autowired
-    private FirePolicyService firePolicyService;
+    private PolicyService firePolicyService;
 
     // Get all FirePolicies
     @GetMapping("/")
