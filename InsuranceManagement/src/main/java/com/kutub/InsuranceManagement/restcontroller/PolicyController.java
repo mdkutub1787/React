@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/firepolicy")
+@RequestMapping("api/policy")
 @CrossOrigin("*")
 public class PolicyController {
 

@@ -25,7 +25,7 @@ const FirePolicyCreate = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch('http://localhost:8080/api/firepolicy/save', {
+    fetch('http://localhost:8080/api/policy/save', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
