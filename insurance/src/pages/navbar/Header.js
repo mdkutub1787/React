@@ -15,6 +15,8 @@ function Header() {
           <Nav className="me-auto">
             <Nav.Link href="/viewpolicy">View Policy</Nav.Link>
             <Nav.Link href="/createpolicy">Create Policy</Nav.Link>
+            <Nav.Link href="/viewfire">View Fire</Nav.Link>
+            <Nav.Link href="/createfire">Create Fire</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
